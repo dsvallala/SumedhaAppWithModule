@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+onSubmit() {
+throw new Error('Method not implemented.');
+}
   title = 'SumedhaAppWithModule';
+userForm: any;
 }
