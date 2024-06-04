@@ -27,7 +27,7 @@ name: string ='frontend development';
   setFormData() {
     this.mycustomForm.get('name')?.setValue('sumedha');
     this.mycustomForm.get('place')?.setValue('hyd');
-    this.mycustomForm.get('feedback')?.setValue('panting');
+    this.mycustomForm.get('feedback')?.setValue('painting');
   }
 
 }
