@@ -176,38 +176,27 @@
 </style>
 
 <main class="main">
-  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-    <div>
-      <label for="firstName">First Name:</label>
-      <input id="firstName" formControlName="firstName" />
-    </div>
-    <div>
-      <label for="lastName">Last Name:</label>
-      <input id="lastName" formControlName="lastName" />
-    </div>
-    <div>
-      <label for="age">Age:</label>
-      <input id="age" formControlName="age" type="number" />
-    </div>
-    <div>
-      <label>Gender:</label>
-      <label>
-        <input type="radio" formControlName="gender" value="male" /> Male
-      </label>
-      <label>
-        <input type="radio" formControlName="gender" value="female" /> Female
-      </label>
-    </div>
-    <div>
-      <label for="password">Password:</label>
-      <input id="password" formControlName="password" type="password" />
-    </div>
-    <div>
-      <label for="confirmPassword">Confirm Password:</label>
-      <input id="confirmPassword" formControlName="confirmPassword" type="password" />
-    </div>
-    <button type="submit" [disabled]="userForm.invalid">Submit</button>
-  </form>
+  <div class="contentleft">
+    <h1> {{ name | uppercase }} </h1>
+  </div>
+  <!-- your-component.component.html -->
+  <div>
+    <form [formGroup]="mycustomForm">
+
+      <label>Name: </label><br />
+      <input type="text" formControlName="name" /> <br />
+
+      <label>Place: </label><br />
+      <input type="text" formControlName="place" /> <br />
+
+      <label>Feedback: </label><br />
+      <input type="text" formControlName="feedback" /> <br />
+
+      <br />
+      <button (click)="saveFormData()">SaveDetails</button><br />
+      <button (click)="setFormData()">SetData</button>
+    </form>
+  </div>
 </main>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

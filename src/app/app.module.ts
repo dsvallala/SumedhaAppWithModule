@@ -3,11 +3,11 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { MyComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    MyComponent
   ],
   imports: [
     BrowserModule,
@@ -17,6 +17,6 @@ import { AppComponent } from './app.component';
   providers: [
     provideClientHydration()
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [MyComponent]
 })
 export class AppModule { }
