@@ -178,6 +178,8 @@
 <main class="main">
   <div class="contentleft">
     <h1> {{ name | uppercase }} </h1>
+    <h2> {{ date | date:'h:m a z'}}</h2>
+    <h3>{{ name | samplepipe }}</h3>
   </div>
   <!-- your-component.component.html -->
   <div>
@@ -197,7 +199,28 @@
       <button (click)="setFormData()">SetData</button>
     </form>
   </div>
+
+
+
 </main>
+
+<div *ngIf=showValue; else elsevalue>
+  this will be shown based on the value of showValue
+</div>
+<ng-template #elsevalue>
+  this div will be shown incase of shownvalue false
+</ng-template>
+
+<ng-container *ngIf="obj">
+  <div *ngFor="let detail of obj">
+    {{detail.name}}
+  </div>
+</ng-container>
+
+<div>
+  <button appQuizHover>Hover over me</button>
+</div>
+
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
