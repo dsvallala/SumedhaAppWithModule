@@ -1,0 +1,12 @@
+<div class="main-ch">
+    <div class="header">
+        <img [src]="data?.picture?.medium" class="photo">
+        <div class="name"><b>{{ data?.name?.first}} {{data?.name?.last}}</b></div>
+    </div>
+    <hr>
+    <div class="footer">
+        <div class="generalstyle">{{ data?.email }}</div>
+        <div class="generalstyle">{{ data?.phone }}</div>
+        <button (click)="fetchData()" class="marginBot">Hire</button>
+    </div>
+</div>

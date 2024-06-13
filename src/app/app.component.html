@@ -1,12 +1,3 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <style>
   :host {
     --bright-blue: oklch(51.01% 0.274 263.83);
@@ -181,32 +172,25 @@
     <h2> {{ date | date:'h:m a z'}}</h2>
     <h3>{{ name | samplepipe }}</h3>
   </div>
-  <!-- your-component.component.html -->
   <div>
     <form [formGroup]="mycustomForm">
-
       <label>Name: </label><br />
       <input type="text" formControlName="name" /> <br />
-
       <label>Place: </label><br />
       <input type="text" formControlName="place" /> <br />
-
       <label>Feedback: </label><br />
       <input type="text" formControlName="feedback" /> <br />
-
       <br />
       <button (click)="saveFormData()">SaveDetails</button><br />
       <button (click)="setFormData()">SetData</button>
     </form>
   </div>
-
-
-
 </main>
 
 <div *ngIf=showValue; else elsevalue>
   this will be shown based on the value of showValue
 </div>
+
 <ng-template #elsevalue>
   this div will be shown incase of shownvalue false
 </ng-template>
@@ -221,14 +205,24 @@
   <button appQuizHover>Hover over me</button>
 </div>
 
+<div class="main-ch">
+  <div class="header">
+    <img [src]="cardData[0].picture?.medium" class="photo">
+    <div class="name"><b>{{ cardData[0].name?.first}} {{cardData[0].name?.last}}</b></div>
+  </div>
+  <hr>
+  <div class="footer">
+    <div class="generalstyle">{{ cardData[0].email }}</div>
+    <div class="generalstyle">{{ cardData[0].phone }}</div>
+    <button (click)="fetchData()" class="marginBot">Hire</button>
+  </div>
+</div>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
+<div class="main-parent" #dataTemplate>
+  <div *ngFor="let data of cardData">
+    <app-test [data]="data"></app-test>
+  </div>
+  <button class="beonright">Move to up</button>
+</div>
 
 <router-outlet />

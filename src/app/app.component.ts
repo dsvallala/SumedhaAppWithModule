@@ -11,6 +11,7 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class AppComponent implements OnInit {
   cardData: any;
+  data: any;
   mycustomForm!: FormGroup;
   name: string = 'Subbulu ';
   showValue: boolean = true;
@@ -60,7 +61,7 @@ export class AppComponent implements OnInit {
   fetchData(): void {
     this.getData().subscribe(
       (response) => {
-        this.cardData = response;
+        this.cardData = response.results;
         console.log(this.cardData);
       },
       (error) => {
